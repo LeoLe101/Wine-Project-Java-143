@@ -73,6 +73,7 @@ public class Wine implements Comparable<Wine>{
         return this.toString().equals(other.toString());
     }
 
+    //compare method between different year of wine to make the sorting easier
     @Override
     public int compareTo(Wine wine) {
         return wine.year - this.year;
