@@ -18,18 +18,23 @@ public class WineProject {
         Wine wine3 = new Wine("Chardonnay,", "Disney", 1936);
         Wine wine4 = new Wine("Middle,", "Cuba", 1927);
         Wine wineDuplicate = new Wine("Middle,", "Cuba", 1927);
+        //add the normal list
         wineList.add(wine1);
         wineList.add(wine2);
         wineList.add(wine3);
         System.out.println("First List: ");
         display(wineList);
+        //add the wine to the middle 
         wineList.add(2, wine4);
         System.out.println("\nSecond List: ");
         display(wineList);
+        //remove the wine in a specific index
         wineList.remove(wineList.indexOf(wine3));
         System.out.println("\nThird List: ");
         display(wineList);
-        wineList.add(wineDuplicate);
+        //adding the duplicate wine
+        add(wineList, wineDuplicate);
+        System.out.println("\nDuplicate List: ");
         display(wineList);
     }
     
@@ -41,6 +46,7 @@ public class WineProject {
         }
     }
     
+    //add method that check the wine if it is in the list or not
     public static void add(ArrayList<Wine> wineList, Wine newWine){
         if (wineList.contains(newWine)) {
             System.out.println("This wine has already in the list!");
